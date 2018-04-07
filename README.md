@@ -1,5 +1,4 @@
-# mongodb-php
-MongoDB PHP tutorial  
+## MongoDB PHP tutorial  
 
 In this tutorial we show how to work with MongoDB in PHP. We use the new mongodb driver for PHP. There is a concise PHP tutorial on ZetCode.
 http://zetcode.com/lang/php/
@@ -10,7 +9,7 @@ MongoDB is a NoSQL cross-platform document-oriented database. It is one of the m
  
 A record in MongoDB is a document, which is a data structure composed of field and value pairs. MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents. MongoDB stores documents in collections. Collections are analogous to tables in relational databases and documents to rows.
 
-##Installing MongoDB
+## Installing MongoDB
 The following command can be used to install MongoDB on a Debian-based Linux.
 
     $ sudo apt-get install mongodb
@@ -64,7 +63,8 @@ The first example connects to the testdb database and gets its statistics.
 
 MongoDB\Driver\Manager is responsible for maintaining connections to MongoDB. MongoDB\Driver\Command represents a database command. On success, the command returns MongoDB\Driver\Cursor.
 
-#####dbstats.php
+###dbstats.php
+    
     <?php
     
     try {
@@ -133,6 +133,7 @@ This is the output of the dbstats.php program.
 The listDatabases command provides a list of all existing databases.
 
 ####list_databases.php
+    
     <?php
     
     try {
@@ -187,6 +188,7 @@ On our local machine, we have these three databases.
 MongoDB\Driver\Query is a value object that represents a database query.
 
 ###read_all.php
+    
     <?php
     
     try {
@@ -243,6 +245,7 @@ This is the output of the read_all.php script.
 The MongoDB\Driver\Query contains a filter parameter which is used to filter the data.
 
 ###filtering.php
+    
     <?php
     
     try {
@@ -302,6 +305,7 @@ This is the output of the filtering.php script.
 Projections can be used to specify which fields should be returned.
 
 ###projection.php
+    
     <?php
     
     try {
@@ -358,6 +362,7 @@ This is the partial output of the projection.php script. Only the name and price
 The limit query option specifies the number of documents to be returned and the sort option the sort order.
 
 ###read_limit.php
+    
     <?php
     
     try {
@@ -402,6 +407,7 @@ This is the output of the read_limit.php script.
 The MongoDB\Driver\Manager::executeBulkWrite method executes one or more write operations, including inserts, updates, and deletes.
 
 ###bulkwrite.php
+    
     <?php
     
     try {
