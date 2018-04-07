@@ -1,4 +1,4 @@
-## MongoDB PHP tutorial  
+# MongoDB PHP tutorial  
 
 In this tutorial we show how to work with MongoDB in PHP. We use the new mongodb driver for PHP. There is a concise PHP tutorial on ZetCode.
 http://zetcode.com/lang/php/
@@ -10,6 +10,7 @@ MongoDB is a NoSQL cross-platform document-oriented database. It is one of the m
 A record in MongoDB is a document, which is a data structure composed of field and value pairs. MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents. MongoDB stores documents in collections. Collections are analogous to tables in relational databases and documents to rows.
 
 ## Installing MongoDB
+
 The following command can be used to install MongoDB on a Debian-based Linux.
 
     $ sudo apt-get install mongodb
@@ -23,7 +24,8 @@ With the sudo service mongodb status command we check the status of the mongodb 
 mongodb start/running, process 6448
 The mongodb server is started with the sudo service mongodb start command.
 
-##Creating a database
+## Creating a database
+
 The mongo tool is an interactive JavaScript shell interface to MongoDB, which provides an interface for systems administrators as well as a way for developers to test queries and operations directly with the database.
 
     $ mongo testdb
@@ -41,7 +43,8 @@ The mongo tool is an interactive JavaScript shell interface to MongoDB, which pr
     > db.cars.insert({name: "Volkswagen", price: 21600})
 We create a testdb database and insert eight documents in the cars collection.
 
-##Installing PHP driver
+## Installing PHP driver
+
 There are two drivers available: the legacy mongo driver and the new mongodb driver. In this tutorial, we work with the new mongodb driver.
 
 Next, we show how to manually install the PHP MongoDB driver.
@@ -58,12 +61,13 @@ We download the sources and install the driver from them.
     extension=mongodb.so
 We add the mongodb.so extension to the php.ini file.
 
-##Database statistics
+## Database statistics
+
 The first example connects to the testdb database and gets its statistics.
 
 MongoDB\Driver\Manager is responsible for maintaining connections to MongoDB. MongoDB\Driver\Command represents a database command. On success, the command returns MongoDB\Driver\Cursor.
 
-###dbstats.php
+###_dbstats.php
     
     <?php
     
@@ -129,10 +133,11 @@ The print_r() function prints a human-readable representation of the $stats vari
     )
 This is the output of the dbstats.php program.
 
-##Listing databases
+## Listing databases
+
 The listDatabases command provides a list of all existing databases.
 
-####list_databases.php
+#### list_databases.php
     
     <?php
     
@@ -184,10 +189,11 @@ We go through the databases array and print the names of the available databases
     local
 On our local machine, we have these three databases.
 
-##Reading data
+## Reading data
+
 MongoDB\Driver\Query is a value object that represents a database query.
 
-###read_all.php
+#### read_all.php
     
     <?php
     
@@ -241,10 +247,11 @@ We iterate over all matched documents.
     Volkswagen : 21600
 This is the output of the read_all.php script.
 
-##Filtering data
+## Filtering data
+
 The MongoDB\Driver\Query contains a filter parameter which is used to filter the data.
 
-###filtering.php
+#### filtering.php
     
     <?php
     
@@ -301,10 +308,11 @@ We print the name and the price of the chosen car. We ensure that the returned v
     Volkswagen: 21600
 This is the output of the filtering.php script.
 
-##Projections
+## Projections
+
 Projections can be used to specify which fields should be returned.
 
-###projection.php
+#### projection.php
     
     <?php
     
@@ -358,10 +366,11 @@ The projections are passed in the second argument of the MongoDB\Driver\Query.
     ...
 This is the partial output of the projection.php script. Only the name and price fields are returned.
 
-##Limiting data output
+## Limiting data output
+
 The limit query option specifies the number of documents to be returned and the sort option the sort order.
 
-###read_limit.php
+#### read_limit.php
     
     <?php
     
@@ -403,10 +412,11 @@ We specify the sort and limit options in the second parameter of the query.
     Mercedes : 57127
 This is the output of the read_limit.php script.
 
-##Bulk write
+## Bulk write
+
 The MongoDB\Driver\Manager::executeBulkWrite method executes one or more write operations, including inserts, updates, and deletes.
 
-###bulkwrite.php
+####bulkwrite.php
     
     <?php
     
